@@ -60,5 +60,5 @@ If I’m investigating a security incident, I often need to:
 - Notes: `notes/01_windows_basics.md`
 - (Optional) Screenshots: `screenshots/` (command output or folder structure)
 
-## Interview-ready summary
+## Summary
 I practiced PowerShell basics I use in real investigations: confirming my working directory, navigating to log locations, listing and verifying files, and creating an organized folder structure to store evidence and keep labs reproducible.
