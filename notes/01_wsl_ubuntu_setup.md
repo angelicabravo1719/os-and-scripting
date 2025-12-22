@@ -5,7 +5,7 @@ Initialize a clean, reproducible OS + Scripting lab repo and capture baseline ev
 
 ## What I did
 - Created a consistent repo structure for writeups + evidence: `notes/`, `captures/`, `screenshots/`.
-- Added a `README.md` documenting the structure and lab index.
+- A README existed on GitHub from repo creation; I updated/standardized it locally and merged the remote changes before pushing.
 - Captured environment “baseline” outputs into version-controlled files:
   - Kernel/platform: `uname -a`
   - Distro/version: `lsb_release -a`
