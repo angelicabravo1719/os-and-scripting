@@ -31,10 +31,10 @@ EOF
 
 ### Baseline evidence
 ``bash
-uname -a | tee captures/01_uname.txt
-lsb_release -a | tee captures/01_lsb_release.txt
-whoami | tee captures/01_whoami.txt
-pwd | tee captures/01_pwd.txt
+- uname -a | tee captures/01_uname.txt
+- lsb_release -a | tee captures/01_lsb_release.txt
+- whoami | tee captures/01_whoami.txt
+- pwd | tee captures/01_pwd.txt
 
 ## Validate structure + one capture
 ls -R
