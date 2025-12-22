@@ -1,18 +1,22 @@
 # 01 — Repo Setup + Git Identity Fix (WSL Ubuntu)
 
 ## Goal
-Set up my OS + Scripting repo structure and save proof that WSL Ubuntu is installed and working.
+Initialize a clean, reproducible OS + Scripting lab repo and capture baseline evidence that my WSL Ubuntu environment is installed and functioning.
 
 ## What I did
-1. Created the standard repo folders: `captures/`, `notes/`, `screenshots/`.
-2. Created a README with the repo structure + lab index.
-3. Saved basic environment proof into `captures/` using: `uname -a`, `lsb_release -a`, `whoami`, `pwd`.
-4. Verified the folder structure and files exist using `ls -R`.
-5. Verified one evidence file by printing it: `cat captures/01_lsb_release.txt`.
-6. Tried to commit to Git (`git add .` then `git commit ...`) and got an identity error (`Author identity unknown`) until my Git name/email were set.
+- Created a consistent repo structure for writeups + evidence: `notes/`, `captures/`, `screenshots/`.
+- Added a `README.md` documenting the structure and lab index.
+- Captured environment “baseline” outputs into version-controlled files:
+  - Kernel/platform: `uname -a`
+  - Distro/version: `lsb_release -a`
+  - Current user: `whoami`
+  - Working directory: `pwd`
+- Verified folder layout and outputs (`ls -R`, `cat captures/01_lsb_release.txt`).
+- Resolved initial Git commit failure (“Author identity unknown”) by configuring Git user identity, then committed successfully.
 
 ## Commands I ran
-# Create README (repo overview + structure)
+``bash
+# README (repo overview + lab index)
 cat > README.md <<'EOF'
 # os-scripting-labs
 
@@ -20,8 +24,8 @@ Hands-on Linux + scripting labs (WSL/Ubuntu) with repeatable steps + evidence.
 
 ## Structure
 - notes/ = writeups
-- screenshots/ = proof (terminal screenshots, configs, etc.)
-- captures/ = command outputs, logs, script output files
+- screenshots/ = proof images
+- captures/ = saved command outputs
 
 ## Lab Index
 - 01 — WSL + Ubuntu Setup
@@ -31,20 +35,20 @@ Hands-on Linux + scripting labs (WSL/Ubuntu) with repeatable steps + evidence.
 - 05 — Bash Triage Script
 EOF
 
-# Create note file (this file)
-# (opened in nano and wrote the notes)
-nano notes/01_wsl_ubuntu_setup.md
-
-# Save environment proof into captures/
+# Baseline evidence
 uname -a | tee captures/01_uname.txt
 lsb_release -a | tee captures/01_lsb_release.txt
 whoami | tee captures/01_whoami.txt
 pwd | tee captures/01_pwd.txt
 
-# Verify structure + verify one capture
+# Validate structure + one capture
 ls -R
 cat captures/01_lsb_release.txt
 
-# Try to commit (this is where the identity error happened at first)
+# Git identity fix (required before committing)
+git config --global user.name "Angelica Bravo"
+git config --global user.email "angelicabravo1719@gmail.com"
+
+# Commit baseline structure + evidence
 git add .
-git commit -m "Initialize OS + Scripting labs structure + Lab 01 notes/evidence"
+git commit -m "Initialize OS + Scripting labs structure + Lab 01 baseline evidence"
