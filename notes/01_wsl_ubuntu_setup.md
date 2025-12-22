@@ -14,14 +14,6 @@ Initialize a clean, reproducible OS + Scripting lab repo and capture baseline ev
 - Verified folder layout and outputs (`ls -R`, `cat captures/01_lsb_release.txt`).
 - Resolved initial Git commit failure (“Author identity unknown”) by configuring Git user identity, then committed successfully.
 
-## Commands I ran
-``bash
-# README (repo overview + lab index)
-cat > README.md <<'EOF'
-# os-scripting-labs
-
-Hands-on Linux + scripting labs (WSL/Ubuntu) with repeatable steps + evidence.
-
 ## Structure
 - notes/ = writeups
 - screenshots/ = proof images
@@ -35,20 +27,20 @@ Hands-on Linux + scripting labs (WSL/Ubuntu) with repeatable steps + evidence.
 - 05 — Bash Triage Script
 EOF
 
-# Baseline evidence
+## Baseline evidence
 uname -a | tee captures/01_uname.txt
 lsb_release -a | tee captures/01_lsb_release.txt
 whoami | tee captures/01_whoami.txt
 pwd | tee captures/01_pwd.txt
 
-# Validate structure + one capture
+## Validate structure + one capture
 ls -R
 cat captures/01_lsb_release.txt
 
-# Git identity fix (required before committing)
+## Git identity fix (required before committing)
 git config --global user.name "Angelica Bravo"
 git config --global user.email "angelicabravo1719@gmail.com"
 
-# Commit baseline structure + evidence
+## Commit baseline structure + evidence
 git add .
 git commit -m "Initialize OS + Scripting labs structure + Lab 01 baseline evidence"
