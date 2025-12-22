@@ -41,8 +41,8 @@ ls -R
 cat captures/01_lsb_release.txt
 
 ## Git identity fix (required before committing)
-git config --global user.name "Angelica Bravo"
-git config --global user.email "angelicabravo1719@gmail.com"
+- git config --global user.name "Angelica Bravo"
+- git config --global user.email "angelicabravo1719@gmail.com"
 
 ## Commit baseline structure + evidence
 git add .
