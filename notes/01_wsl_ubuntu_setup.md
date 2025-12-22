@@ -27,7 +27,10 @@ Initialize a clean, reproducible OS + Scripting lab repo and capture baseline ev
 - 05 — Bash Triage Script
 EOF
 
-## Baseline evidence
+## Commands I ran
+
+### Baseline evidence
+``bash
 uname -a | tee captures/01_uname.txt
 lsb_release -a | tee captures/01_lsb_release.txt
 whoami | tee captures/01_whoami.txt
