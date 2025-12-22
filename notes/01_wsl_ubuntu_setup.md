@@ -12,7 +12,6 @@ Set up my OS + Scripting repo structure and save proof that WSL Ubuntu is instal
 6. Tried to commit to Git (`git add .` then `git commit ...`) and got an identity error (`Author identity unknown`) until my Git name/email were set.
 
 ## Commands I ran
-```bash
 # Create README (repo overview + structure)
 cat > README.md <<'EOF'
 # os-scripting-labs
