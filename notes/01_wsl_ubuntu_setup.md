@@ -1,4 +1,4 @@
-# 01 — Repo Setup + Git Identity Fix (WSL Ubuntu)
+# 02 — Repo Setup + Git Identity Fix (WSL Ubuntu)
 
 ## Goal
 Set up my OS + Scripting repo structure and save proof that WSL Ubuntu is installed and working.
