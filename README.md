@@ -1,209 +1,127 @@
-# OS and Scripting Lab
+# 03 — Process Review
 
-## Overview
+## Goal
 
-This repository documents hands-on operating system and scripting practice focused on building foundational skills for cybersecurity analysis, SOC operations, incident response, and technical troubleshooting.
+Understand how Linux manages running processes and how analysts review system activity.
 
-The labs in this repository focus on command-line navigation, file permissions, process review, basic scripting, and analyst-style documentation across Linux and Windows environments.
-
----
-
-## Scope of Work
-
-This repository focuses on:
-
-* Linux command-line fundamentals
-* Windows PowerShell basics
-* File and directory navigation
-* File permissions and access control
-* Process and service review
-* Basic Bash scripting
-* Basic PowerShell scripting
-* Security relevance of operating system activity
+Processes represent programs currently executing on a system. Security analysts frequently review processes during investigations to identify suspicious, unauthorized, or resource-intensive activity.
 
 ---
 
-## Skills Demonstrated
+## What I Did
 
-### Operating System Fundamentals
-
-* Linux terminal usage
-* Windows PowerShell usage
-* File system navigation
-* Directory structure understanding
-* Process and service awareness
-
-### Scripting Fundamentals
-
-* Bash command usage
-* PowerShell command usage
-* Basic automation concepts
-* Command output review
-* Script documentation
-
-### Security Analysis
-
-* Understanding file permissions
-* Reviewing running processes
-* Identifying system activity
-* Recognizing how attackers and administrators use command-line tools
-* Building foundational skills for SOC and incident response workflows
+* Reviewed active processes running in my Linux environment.
+* Used `ps` to view processes associated with the current terminal session.
+* Used `ps -ef` to review detailed system process information.
+* Used `top` to observe real-time process and resource utilization.
+* Examined process IDs, users, commands, CPU usage, and memory usage.
+* Captured screenshots as evidence of the process review.
 
 ---
 
-## Lab Summary
+## Commands Used
 
-| Lab | Topic | Skill Demonstrated |
-|---|---|---|
-| 01 | Linux Navigation | File system and command-line basics |
-| 02 | Linux File Permissions | Access control and permission review |
-| 03 | Process Review | Running process analysis |
-| 04 | Bash Scripting Basics | Simple automation and command execution |
-| 05 | PowerShell Basics | Windows command-line and system review |
+### View Current Session Processes
 
----
+```bash
+ps
+```
 
-## Lab Progression
+Displays processes associated with the current terminal session.
 
-### Lab 01 – Linux Navigation
+### View Detailed Process Information
 
-**Objective:** Practice basic Linux terminal navigation and file system commands.
+```bash
+ps -ef
+```
 
-Topics covered:
+Displays detailed process information, including users, process IDs, parent process IDs, start times, and commands.
 
-* `pwd`
-* `ls`
-* `cd`
-* `mkdir`
-* `touch`
-* `cat`
-* Directory structure review
+### View Real-Time Process Activity
 
----
+```bash
+top
+```
 
-### Lab 02 – Linux File Permissions
+Displays active processes and real-time system resource utilization, including CPU and memory usage.
 
-**Objective:** Understand how Linux file permissions work and why they matter for security.
+To exit `top`:
 
-Topics covered:
-
-* `chmod`
-* `chown`
-* Read, write, and execute permissions
-* User, group, and other permission categories
-* Permission misconfiguration risks
-
----
-
-### Lab 03 – Process Review
-
-**Objective:** Review running processes and understand how analysts inspect system activity.
-
-Topics covered:
-
-* `ps`
-* `top`
-* Process IDs
-* Parent-child process relationships
-* Suspicious process review concepts
-
----
-
-### Lab 04 – Bash Scripting Basics
-
-**Objective:** Create simple Bash scripts to automate repetitive command-line tasks.
-
-Topics covered:
-
-* Script creation
-* Script execution
-* Variables
-* Echo statements
-* Basic automation logic
-
----
-
-### Lab 05 – PowerShell Basics
-
-**Objective:** Practice Windows PowerShell commands used for system review and security analysis.
-
-Topics covered:
-
-* `Get-Process`
-* `Get-Service`
-* `Get-ChildItem`
-* Command output review
-* Windows system visibility
-
----
-
-## SOC Applications
-
-The skills demonstrated in this repository support:
-
-* Security Operations Center analysis
-* Incident response
-* Endpoint investigation
-* Log review
-* Malware triage fundamentals
-* System troubleshooting
-* Security automation foundations
-
-Operating system and scripting skills are essential for cybersecurity analysts because many investigations require reviewing files, processes, permissions, services, and command-line activity.
-
----
-
-## Repository Structure
-
-```plaintext
-os-and-scripting/
-
-├── linux/
-│   ├── lab-01-linux-navigation/
-│   ├── lab-02-file-permissions/
-│   ├── lab-03-process-review/
-│   └── lab-04-bash-scripting/
-│
-├── windows/
-│   └── lab-05-powershell-basics/
-│
-├── scripts/
-│   ├── bash/
-│   └── powershell/
-│
-├── screenshots/
-│
-└── README.md
+```bash
+q
 ```
 
 ---
 
-## Technologies Used
+## What I Observed
 
-* Ubuntu / WSL
-* Linux terminal
-* Windows PowerShell
-* Bash
-* GitHub
-* Markdown
+* The `ps` command showed processes associated with my current shell session.
+* The `ps -ef` command displayed a more complete list of system processes.
+* The `top` command provided real-time visibility into CPU usage, memory usage, uptime, load average, and active processes.
+* Each process was assigned a unique Process ID (PID).
+* Processes were associated with specific users, such as `root` and `angel`.
+* The system showed low resource utilization and no obvious suspicious activity during the review.
 
 ---
 
-## Learning Objectives
+## Key Fields Reviewed
 
-The purpose of this repository is to build practical comfort with operating systems, command-line tools, and scripting concepts used in cybersecurity environments.
+| Field | Meaning | Why It Matters |
+|---|---|---|
+| PID | Process ID | Identifies a specific running process |
+| PPID | Parent Process ID | Shows which process launched another process |
+| USER / UID | User running the process | Helps determine account context |
+| CMD | Command or process name | Shows what is actually running |
+| %CPU | CPU usage | Helps identify resource-intensive activity |
+| %MEM | Memory usage | Helps identify abnormal memory consumption |
 
-Key learning objectives include:
+---
 
-* Navigating Linux and Windows command-line environments
-* Understanding file permissions and access control
-* Reviewing running processes and services
-* Practicing basic scripting and automation
-* Building confidence with technical documentation
-* Connecting operating system activity to cybersecurity investigations
+## Evidence Collected
+
+### Screenshots
+
+Screenshots captured during this lab:
+
+* `linux_process_list.png`
+* `linux_process_details.png`
+* `linux_top_output.png`
+
+---
+
+## Security Relevance
+
+Process review is a fundamental incident response and threat-hunting activity.
+
+Security analysts review processes to:
+
+* Detect potentially malicious software
+* Identify unauthorized command execution
+* Investigate suspicious parent-child process relationships
+* Review activity running under privileged accounts
+* Identify abnormal CPU or memory usage
+* Validate alerts generated by security tools
+
+Many investigations begin by answering:
+
+* What is running?
+* Who launched it?
+* What user account is associated with it?
+* Is the process expected or suspicious?
+* Is the process consuming abnormal resources?
+
+---
+
+## Key Takeaways
+
+* Every running program operates as a process.
+* Linux assigns each process a unique PID.
+* Parent-child process relationships help analysts understand how activity started.
+* `ps`, `ps -ef`, and `top` provide different levels of process visibility.
+* Process review is an essential skill for SOC analysis, incident response, and Linux system investigation.
 
 ---
 
 ## Note
 
-All labs were performed in a personal lab environment for educational and portfolio development purposes.
+This lab was performed in a personal lab environment for educational and portfolio development purposes.
