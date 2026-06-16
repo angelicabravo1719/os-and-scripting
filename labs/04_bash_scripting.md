@@ -54,12 +54,27 @@ Runs the script.
 
 ---
 
+## Script Contents
+
+```bash
+#!/bin/bash
+
+echo "Hello from Bash!"
+echo "Current User:"
+whoami
+echo "Current Directory:"
+pwd
+```
+
+---
+
 ## What I Observed
 
 * Bash scripts execute commands sequentially.
 * Scripts can automate repetitive tasks.
 * Execution permissions are required before running a script.
 * Script output appears directly in the terminal.
+* Commands embedded within a script execute automatically when the script is run.
 
 ---
 
@@ -69,8 +84,11 @@ Runs the script.
 
 Screenshots captured during this lab:
 
-* bash_script_creation.png
-* bash_script_execution.png
+* `bash_script_execution.png`
+
+### Script File
+
+* `scripts/bash/hello_world.sh`
 
 ---
 
@@ -98,8 +116,9 @@ Understanding Bash scripting improves efficiency and supports security operation
 
 * Bash scripts automate command execution.
 * Scripts reduce repetitive manual work.
-* Execution permissions are required for scripts.
+* Execution permissions are required before scripts can be run.
 * Bash is widely used throughout Linux environments.
+* Basic scripting skills provide a foundation for security automation and system administration.
 
 ---
 
