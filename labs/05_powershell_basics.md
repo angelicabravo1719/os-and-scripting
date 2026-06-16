@@ -13,7 +13,8 @@ PowerShell is a powerful command-line shell and scripting language used extensiv
 * Opened a PowerShell session.
 * Reviewed active processes running on the system.
 * Examined process information returned by PowerShell.
-* Executed PowerShell commands and reviewed their output.
+* Identified the current user account.
+* Reviewed the current working directory.
 * Captured screenshots as evidence.
 
 ---
@@ -28,14 +29,6 @@ Get-Process
 
 Displays running processes on the system.
 
-### View Current Location
-
-```powershell
-Get-Location
-```
-
-Displays the current working directory.
-
 ### View Current User
 
 ```powershell
@@ -44,14 +37,23 @@ whoami
 
 Displays the current user account.
 
+### View Current Location
+
+```powershell
+Get-Location
+```
+
+Displays the current working directory.
+
 ---
 
 ## What I Observed
 
-* PowerShell can retrieve detailed information about running processes.
-* Processes are associated with process IDs and resource utilization.
+* PowerShell returned detailed information about running processes.
+* Processes were associated with process IDs and system resource usage.
+* Multiple Windows services and applications were actively running.
+* The current user context and working directory were easily identified.
 * PowerShell provides administrative visibility into Windows systems.
-* Command output can be used during investigations and troubleshooting activities.
 
 ---
 
@@ -61,14 +63,14 @@ Displays the current user account.
 
 Screenshots captured during this lab:
 
-* powershell_process_review.png
-* powershell_user_context.png
+* `powershell_process_review.png`
+* `powershell_user_context.png`
 
 ---
 
 ## Security Relevance
 
-PowerShell is commonly used by:
+PowerShell is frequently used by:
 
 * Security analysts
 * System administrators
@@ -83,16 +85,17 @@ Common uses include:
 * Administrative automation
 * Incident response investigations
 
-Understanding PowerShell is valuable because Windows systems are widely used in enterprise environments.
+PowerShell is one of the most important tools for managing and investigating Windows environments.
 
 ---
 
 ## Key Takeaways
 
-* PowerShell provides visibility into Windows systems.
-* Running processes can be reviewed using PowerShell commands.
-* PowerShell is an important tool for administration and security operations.
-* Analysts frequently use PowerShell during investigations.
+* PowerShell provides visibility into running Windows processes.
+* User context can be verified using built-in commands.
+* PowerShell supports system administration and security operations.
+* Process review is a common investigative activity.
+* Windows command-line proficiency is valuable for cybersecurity professionals.
 
 ---
 
